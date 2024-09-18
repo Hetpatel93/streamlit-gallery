@@ -13,20 +13,21 @@ st.markdown("""
         background-size: cover; /* Cover the entire background */
         background-attachment: fixed; /* Fix the background */
         background-position: center; /* Center the background image */
+        margin: 0; /* Remove default margins */
     }
     .main {
-        background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background for main content */
+        background-color: rgba(255, 255, 255, 0.8); /* Adjust transparency of main content */
         color: #333;
     }
     .header {
-        background-color: #F0EDE5;
+        background-color: rgba(240, 237, 229, 0.9); /* Slightly transparent header */
         padding: 10px;
         border-radius: 10px;
         text-align: center;
         color: #3C3C3C;
     }
     .footer {
-        background-color: #F0EDE5;
+        background-color: rgba(240, 237, 229, 0.9); /* Slightly transparent footer */
         color: #333;
         padding: 10px;
         text-align: center;
@@ -55,6 +56,7 @@ st.markdown("""
     }
     </style>
     """, unsafe_allow_html=True)
+
 st.markdown("<h1 class='header'>Flow Rate Calculation</h1>", unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
@@ -125,10 +127,10 @@ st.header('Venturimeter Used to Measure Flow Rate')
 
 # Image section
 images = [
-    ("C:/Users/Het/Desktop/flow rate/Venturi meter.png", "Venturi meter"),
-    ("C:/Users/Het/Desktop/flow rate/D2.png", "Diameter 1"),
-    ("C:/Users/Het/Desktop/flow rate/D1.png", "Diameter 2 (throat)"),
-    ("C:/Users/Het/Desktop/flow rate/h.png", "U-tube manometer"),
+    ("/Venturi meter.png", "Venturi meter"),
+    ("/D2.png", "Diameter 1"),
+    ("/D1.png", "Diameter 2 (throat)"),
+    ("/h.png", "U-tube manometer"),
 ]
 
 # Create columns based on the number of images
