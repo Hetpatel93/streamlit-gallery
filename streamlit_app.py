@@ -97,6 +97,18 @@ else:
     Q = q1 / q2
     flag = True
     
+def format_value(value):
+    if value < 0.01:
+        exponent = int(math.floor(math.log10(abs(value))))
+        mantissa = value / (10 ** exponent)
+        return f"{mantissa:.2f} X 10^{{{exponent}}}" 
+    else:
+        return f"{value:.2f}" 
+
+if flag:
+    st.write(f"Discharge Rate (Q): {format_value(Q)}"," m^3/s")
+   
+    
 st.header('Discharge Rate Formula')
 st.latex(r'''
      Q_{th} = C_d \cdot a_1 \cdot a_2 \cdot \left\{\frac{\sqrt{2gh}}{\sqrt{a_1^2 - a_2^2}}\right\}
