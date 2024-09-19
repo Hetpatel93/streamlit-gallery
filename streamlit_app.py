@@ -96,7 +96,7 @@ elif q2 == 0 or q1 == 0 or h == 0:
 else:
     Q = q1 / q2
     flag = True
-    
+
 def format_value(value):
     if value < 0.01:
         exponent = int(math.floor(math.log10(abs(value))))
