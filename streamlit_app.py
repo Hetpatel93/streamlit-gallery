@@ -3,7 +3,7 @@ import math
 from PIL import Image
 
 
-st.set_page_config(page_title="Flow Rate Calculation", page_icon=":bar_chart:", layout="wide")
+st.set_page_config(page_title="Discharge Rate Calculation", page_icon=":bar_chart:", layout="wide")
 
 
 st.markdown("""
