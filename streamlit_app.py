@@ -96,6 +96,7 @@ elif q2 == 0 or q1 == 0 or h == 0:
 else:
     Q = q1 / q2
     flag = True
+    
 st.header('Discharge Rate Formula')
 st.latex(r'''
      Q_{th} = C_d \cdot a_1 \cdot a_2 \cdot \left\{\frac{\sqrt{2gh}}{\sqrt{a_1^2 - a_2^2}}\right\}
