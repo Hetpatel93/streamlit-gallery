@@ -127,10 +127,10 @@ st.header('Venturimeter Used to Measure Flow Rate')
 
 # Image section
 images = [
-    ("main/Venturi meter.png", "Venturi meter"),
-    ("main/D2.png", "Diameter 1"),
-    ("main/D1.png", "Diameter 2 (throat)"),
-    ("main/h.png", "U-tube manometer"),
+    ("Venturi meter.png", "Venturi meter"),
+    ("D2.png", "Diameter 1"),
+    ("D1.png", "Diameter 2 (throat)"),
+    ("H.png", "U-tube manometer"),
 ]
 
 # Create columns based on the number of images
