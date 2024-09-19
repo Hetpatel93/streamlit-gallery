@@ -82,12 +82,13 @@ def format_value(value):
     if value < 0.01:
         exponent = int(math.floor(math.log10(abs(value))))
         mantissa = value / (10 ** exponent)
-        return f"{mantissa:.2f} X 10^{{{exponent}}}" 
+        return f"{mantissa:.2f} \\times 10^{{{exponent}}}" 
     else:
         return f"{value:.2f}"
 
 if flag:
-    st.write(f"Discharge Rate (Q): {format_value(Q)}", " m^3/s")
+    formatted_value = format_value(Q)
+    st.latex(rf"Discharge Rate (Q): {formatted_value}\, \text{{m}}^3/\text{{s}}")
 
 st.header('Discharge Rate Formula')
 st.latex(r'''
