@@ -3,7 +3,7 @@ import math
 from PIL import Image
 
 # Set up the page configuration
-st.set_page_config(page_title="Flow Rate Calculation", page_icon=":bar_chart:", layout="wide")
+st.set_page_config(page_title="Discharge Rate Calculation", page_icon=":bar_chart:", layout="wide")
 
 # Apply custom styles
 st.markdown("""
@@ -57,7 +57,7 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-st.markdown("<h1 class='header'>Flow Rate Calculation</h1>", unsafe_allow_html=True)
+st.markdown("<h1 class='header'>Discharge Rate Calculation</h1>", unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
 
@@ -68,32 +68,35 @@ with col2:
     d2 = st.number_input("Diameter 2 (m):", value=1.0, format="%.5f")
 
 # Slider for Head (m)
-h = st.slider("Head (m):", min_value=0.0, max_value=50.0, value=0.1, format="%.2f")
+h = st.slider("Head (m):", min_value=0.1, max_value=50.0, value=0.1, format="%.2f")
 
-pi=math.pi
-pi2=pi/4
-A1=(d1**2)
-a1=pi2*A1
-A2=(d2**2)
-a2=pi2*A2
-cd=0.66
-g=9.81
-v=(2*g*h)
-V=v**(1/2)
-q1=cd*A1*A2*V
-p1=(A1**2)
-p2=(A2**2)
-d=(p1-p2)
-q2=d**(1/2)
+pi = math.pi
+pi2 = pi / 4
+A1 = (d1 ** 2)
+a1 = pi2 * A1
+A2 = (d2 ** 2)
+a2 = pi2 * A2
+cd = 0.66
+g = 9.81
+v = (2 * g * h)
+V = v ** (1 / 2)
+q1 = cd * A1 * A2 * V
+p1 = (A1 ** 2)
+p2 = (A2 ** 2)
+d = (p1 - p2)
+q2 = d ** (1 / 2)
+flag = False
 
-
-if q2 == 0 or q1==0 or h==0 :
-    Q = "0"
+if d1 == d2:
+    st.error("Diameter of both sections can never be same!")
+elif d1 < d2:
+    st.error("Diameter-1 cannot be smaller than Diameter-2!")
+elif q2 == 0 or q1 == 0 or h == 0:
+    st.error("Diameter 2 cannot be zero")
 else:
     Q = q1 / q2
-st.write(f"Flow Rate Ratio (Q): {Q}", format="%.5f")
-
-st.header('Flow Rate Formula')
+    flag = True
+st.header('Discharge Rate Formula')
 st.latex(r'''
      Q_{th} = C_d \cdot a_1 \cdot a_2 \cdot \left\{\frac{\sqrt{2gh}}{\sqrt{a_1^2 - a_2^2}}\right\}
      ''')
