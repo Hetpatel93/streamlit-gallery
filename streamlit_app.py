@@ -119,7 +119,7 @@ st.header('Venturimeter Used to Measure Flow Rate')
 
 # Ensure images are in the same directory as your script
 images = [
-    ("Venturi_meter.png", "Venturi meter"),
+    ("Venturi meter.png", "Venturi meter"),
     ("D2.png", "Diameter 1"),
     ("D1.png", "Diameter 2 (throat)"),
     ("H.png", "U-tube manometer"),
