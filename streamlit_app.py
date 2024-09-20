@@ -2,10 +2,9 @@ import streamlit as st
 import math
 from PIL import Image
 
-# Set up the page configuration
 st.set_page_config(page_title="Discharge Rate Calculation", page_icon=":bar_chart:", layout="wide")
 
-# Apply custom styles
+
 st.markdown("""
     <style>
     body {
@@ -95,7 +94,7 @@ st.latex(r'''
      Q_{th} = C_d \cdot a_1 \cdot a_2 \cdot \left\{\frac{\sqrt{2gh}}{\sqrt{a_1^2 - a_2^2}}\right\}
      ''')
 
-# Add more latex explanations
+
 st.write("### Where,")
 st.latex(r'''
 Q_{th} = \text{Discharge measurement}
@@ -118,7 +117,6 @@ g = 9.81 \, \text{m/s}^2 \, \text{(Acceleration due to gravity)}
 
 st.header('Venturimeter Used to Measure Flow Rate')
 
-# Ensure images are in the same directory as your script
 images = [
     ("Venturi meter.png", "Venturi meter"),
     ("D2.png", "Diameter 1"),
